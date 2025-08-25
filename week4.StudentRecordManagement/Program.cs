@@ -38,6 +38,7 @@ namespace week4.StudentRecordManagement
                         studentName.Add(Console.ReadLine());
                         Console.Write("Student ID: ");
                         studentID.Add(Convert.ToInt32(Console.ReadLine()));
+                        //Check if student ID is unique
                         if (studentID.Distinct().Count() != studentID.Count())
                         {
                             Console.WriteLine("Student ID must be unique. Press Enter to continue.");
@@ -56,6 +57,7 @@ namespace week4.StudentRecordManagement
                         int ID = Convert.ToInt32(Console.ReadLine());
                         int findStudent = studentID.IndexOf(ID);
                         Console.WriteLine();
+                        //If student is found, display their information
                         if (findStudent != -1)
                         {
                             Console.WriteLine("Student Name: " + studentName[findStudent]);
@@ -101,10 +103,10 @@ namespace week4.StudentRecordManagement
                                 studentGrade[updateStudent] = Convert.ToInt32(Console.ReadLine());
                                 break;
                             default:
-                                Console.ReadLine("Invalid choice");
+                                Console.WriteLine("Invalid choice");
                                 break;
                         }
-                        Console.WriteLine();
+                        Console.ReadLine();
                         break;
                     case 5:
                         //View All Students
